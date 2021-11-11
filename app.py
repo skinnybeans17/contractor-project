@@ -28,7 +28,7 @@ def donation_submit():
     donation = {
         'name': request.form.get('name'),
         'amount': request.form.get('amount'),
-        'date': datetime.now()
+        'date': request.form.get('date')
       }
     donations.insert_one(donation)
     return redirect(url_for('index'))
