@@ -20,12 +20,10 @@ def index():
     if request.method == 'POST':
         donation_charity = request.form['charity']
         donation_amount = request.form['amount']
-        new_donation1 = Todo(charity=donation_charity)
-        new_donation2 = Todo(amount=donation_amount)
+        new_donation = Todo(content=donation_content)
 
         try:
-            db.session.add(new_donation1)
-            db.session.add(new_donation2)
+            db.session.add(new_donation)
             db.session.commit()
             return redirect('/')
         except:
