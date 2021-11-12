@@ -8,8 +8,7 @@ db = SQLAlchemy(app)
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    charity = db.Column(db.String(100), nullable=False)
-    amount = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.String(100), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -19,9 +18,10 @@ class Todo(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        donation_content = request.form['charity']
-        donation_content = request.form['amount']
-        new_donation = Todo(content=donation_content)
+        donation_charity = request.form['charity']
+        donation_amount = request.form['amount']
+        new_donation = Todo(charity=donation_charity)
+        new_donation = Todo(amount=donation_amount)
 
         try:
             db.session.add(new_donation)
