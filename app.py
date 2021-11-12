@@ -19,7 +19,7 @@ class Todo(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        donation_content = request.form['content']
+        donation_content = request.form['charity', 'amount']
         new_donation = Todo(content=donation_content)
 
         try:
