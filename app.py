@@ -18,27 +18,27 @@ class Todo(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        task_content = request.form['content']
-        new_task = Todo(content=task_content)
+        donation_content = request.form['content']
+        new_donation = Todo(content=donation_content)
 
         try:
-            db.session.add(new_task)
+            db.session.add(new_donation)
             db.session.commit()
             return redirect('/')
         except:
             return 'There was an issue adding your donation'
 
     else:
-        tasks = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html', tasks=tasks)
+        donations = Todo.query.order_by(Todo.date_created).all()
+        return render_template('index.html', donations=donations)
 
 
 @app.route('/delete/<int:id>')
 def delete(id):
-    task_to_delete = Todo.query.get_or_404(id)
+    donation_to_delete = Todo.query.get_or_404(id)
 
     try:
-        db.session.delete(task_to_delete)
+        db.session.delete(donation_to_delete)
         db.session.commit()
         return redirect('/')
     except:
@@ -46,10 +46,10 @@ def delete(id):
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    task = Todo.query.get_or_404(id)
+    donation = Todo.query.get_or_404(id)
 
     if request.method == 'POST':
-        task.content = request.form['content']
+        donation.content = request.form['content']
 
         try:
             db.session.commit()
@@ -58,7 +58,7 @@ def update(id):
             return 'There was an issue updating your donation'
 
     else:
-        return render_template('update.html', task=task)
+        return render_template('update.html', donation=donation)
 
 
 if __name__ == "__main__":
