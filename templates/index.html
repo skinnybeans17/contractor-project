@@ -7,21 +7,21 @@
 {% block body %}
 <div class="content">
     <h1 style="text-align: center">Charity Tracker</h1>
-    {% if tasks|length < 1 %}
-    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    {% if donations|length < 1 %}
+    <h4 style="text-align: center">No donations have been made yet. Create one below!</h4>
     {% else %}
     <table>
         <tr>
-            <th>Task</th>
+            <th>Donation</th>
             <th>Added</th>
             <th>Actions</th>
         </tr>
-        {% for task in tasks %}
+        {% for donation in donations %}
             <tr>
                 <td>{{ donation.content }}</td>
                 <td>{{ donation.date_created.date() }}</td>
                 <td>
-                    <a href="/delete/{{task.id}}">Delete</a>
+                    <a href="/delete/{{donation.id}}">Delete</a>
                     <br>
                     <a href="/update/{{task.id}}">Update</a>
                 </td>
