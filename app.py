@@ -49,7 +49,8 @@ def update(id):
     donation = Todo.query.get_or_404(id)
 
     if request.method == 'POST':
-        donation.content = request.form['content']
+        donation.charity = request.form['charity']
+        donation.amount = request.form['amount']
 
         try:
             db.session.commit()
