@@ -36,6 +36,10 @@ td {
     margin-top: 20px;
 }
 
-#content {
-    width: 70%;
+#charity {
+    width: 35%;
+}
+
+#amount {
+    width: 35%;
 }
