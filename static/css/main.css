@@ -4,9 +4,14 @@ body, html {
     background-color: green;
 }
 
-.content {
+.charity {
     margin: 0 auto;
-    width: 400px;
+    width: 200px;
+}
+
+.amount {
+    margin: 0 auto;
+    width: 200px;
 }
 
 table, td, th {
@@ -31,10 +36,6 @@ td {
     margin-top: 20px;
 }
 
-#charity {
-    width: 35%;
-}
-
-#amount {
-    width: 35%;
+#content {
+    width: 70%;
 }
