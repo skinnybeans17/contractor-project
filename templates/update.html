@@ -10,8 +10,8 @@
 
     <div class="form">
         <form action="/update/{{donation.id}}" method="POST">
-            <input type="text" name="charity" id="charity" value="{{donation.charity}}">
-            <input type="number" name="amount" id="amount" value="{{donation.amount}}">
+            <input type="text" name="charity" id="charity" value="{{ donation.charity }}">
+            <input type="number" name="amount" id="amount" value="{{ donation.amount }}">
             <input type="submit" value="Update">
         </form>
     </div>
