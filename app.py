@@ -9,7 +9,6 @@ db = SQLAlchemy(app)
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
-    amount = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -20,7 +19,6 @@ class Todo(db.Model):
 def index():
     if request.method == 'POST':
         donation_content = request.form['content']
-        donation_content = request.form['amount']
         new_donation = Todo(content=donation_content)
 
         try:
@@ -52,7 +50,6 @@ def update(id):
 
     if request.method == 'POST':
         donation.content = request.form['content']
-        donation.content = request.form['amount']
 
         try:
             db.session.commit()
