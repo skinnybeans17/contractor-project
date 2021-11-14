@@ -7,12 +7,12 @@ body, html {
 
 .content {
     margin: 0 auto;
-    width: 200px;
+    width: 100px;
 }
 
 .amount {
     margin: 0 auto;
-    width: 200px;
+    width: 100px;
 }
 
 table, td, th {
