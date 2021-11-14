@@ -6,9 +6,6 @@ from datetime import datetime
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
-host = os.environ.get("MONGODB_URI", "mongodb://localhost:27017/Charity-tracker")
-client = MongoClient(host=host)
-db = client.get_default_database()
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
