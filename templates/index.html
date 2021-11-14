@@ -19,7 +19,7 @@
         </tr>
         {% for donation in donations %}
             <tr>
-                <td>{{ donation.charity }}</td>
+                <td>{{ donation.content }}</td>
                 <td>{{ donation.amount }}</td>
                 <td>{{ donation.date_created.date() }}</td>
                 <td>
@@ -34,8 +34,8 @@
 
     <div class="form">
         <form action="/" method="POST">
-            <h3>Charity Name</h3><input type="text" name="charity" id="charity">
-            <h3>Amount to Donut</h3><input type="number" name="amount" id="amount">
+            <h3>Charity Name</h3><input type="text" name="content" id="content">
+            <h3>Amount to Donate</h3><input type="number" name="amount" id="amount">
             <input type="submit" value="Make Donation">
         </form>
     </div>
