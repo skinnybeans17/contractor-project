@@ -5,7 +5,7 @@ body, html {
     color: white;
 }
 
-.charity {
+.content {
     margin: 0 auto;
     width: 200px;
 }
@@ -37,7 +37,7 @@ td {
     margin-top: 20px;
 }
 
-#charity {
+#content {
     width: 35%;
 }
 
