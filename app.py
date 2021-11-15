@@ -19,6 +19,7 @@ class Todo(db.Model):
 def index():
     if request.method == 'POST':
         donation_content = request.form['content']
+        donation_content = request.form['amount']
         new_donation = Todo(content=donation_content)
 
         try:
@@ -50,6 +51,7 @@ def update(id):
 
     if request.method == 'POST':
         donation.content = request.form['content']
+        donation.content = request.form['amount']
 
         try:
             db.session.commit()
