@@ -51,7 +51,7 @@ def update(id):
 
     if request.method == 'POST':
         donation.content = request.form['content']
-        donation.content = request.form['amount']
+        donation.amount = request.form['amount']
 
         try:
             db.session.commit()
