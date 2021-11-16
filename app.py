@@ -11,7 +11,7 @@ donations = db.donations
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def charity_index():
     donates=list(donations.find())
     for i in range(len(donates)):
       donates[i]['amount'] = float(donates[i]['amount'])
@@ -35,7 +35,7 @@ def donation_submit():
 @app.route('/donations/<donation_id>/remove', methods=['POST'])
 def donation_delete(donation_id):
     donations.delete_one({'_id': ObjectId(donation_id)})
-    return redirect(url_for('index'))
+    return redirect(url_for('charity_index'))
 
 if __name__ == '__main__':
   app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
