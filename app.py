@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 import os
 
-host = os.environ.get("DB_URL")
+host = os.environ.get("MONGODB_URI")
 client = MongoClient(host=host)
 db = client.get_default_database()
 donations = db.donations
