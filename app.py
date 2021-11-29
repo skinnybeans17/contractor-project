@@ -1,11 +1,11 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 from bson.objectid import ObjectId
+import os
 
 host = os.environ.get("DB_URL")
 client = MongoClient(host=host)
-db = client.get_default_database()
+db = client.get_database("contractor-project")
 donations = db.donations
 
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def charity_index():
     for i in range(len(donates)):
       donates[i]['amount'] = float(donates[i]['amount'])
     donates.sort(key=lambda x: x['date'], reverse=False)
-    return render_template('index.html', donates=donates)
+    return render_template('charity_index.html', donates=donates)
 
 @app.route('/donations/new')
 def donation_new():
