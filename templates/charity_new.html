@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %}
+<form method='POST' action='/donations'>
+    {% include 'partials/charity_form.html' %}
+    <div class='form-group'>
+        <button class='btn btn-primary' type='submit'>Add this new Charity</button>
+    </div>
+</form>
+{% endblock %}
