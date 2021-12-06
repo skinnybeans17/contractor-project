@@ -14,9 +14,6 @@ app = Flask(__name__)
 @app.route('/')
 def charity_index():
     donates=list(donations.find())
-    for i in range(len(donates)):
-      donates[i]['amount'] = float(donates[i]['amount'])
-    donates.sort(key=lambda x: x['date'], reverse=False)
     return render_template('charity_index.html', donations=donates)
 
 @app.route('/donations/new')
