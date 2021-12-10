@@ -1,0 +1,19 @@
+<form action='/charities/donations' method='POST'>
+    <input type='hidden' value='{{ donation_id }}' name='donation_id'/>
+    <fieldset>
+        <legend>Add a Donation to this Charity</legend>
+        <div class='form-group'>
+            <label for='donation-amount'>Amount to Donate</label><br>
+            <input class='form-control' id='amount' type='number' name='amount' placeholder='Amount'/>
+        </div>
+
+        <div class='form-group'>
+            <label for='donation-date'>Date of Donation</label><br>
+            <input class='form-control' id='date' type='date' name='date' placeholder='Date'/>
+        </div>
+    </fieldset>
+
+        <div class='form-group'>
+            <button class='btn btn-primary' type='submit'>Submit Donation</button>
+        </div>
+</form>

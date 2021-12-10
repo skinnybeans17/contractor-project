@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Charities I've Contributed To</h1>
+
+  <a href="/charities/new">New Charity</a>
+
+  <div class="row">
+    {% for charity in charities %}
+      <div class="col-md-3 card">
+        <h2 class="card-title"><a href='/charities/{{ charity._id }}'>{{ charity.title }}</a></h2>
+        <small class="card-text">{{ charity.description }}</small>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

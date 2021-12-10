@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href='/'>Back to Home</a>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1>{{ charity.title }}</h1>
+    <h2>{{ charity.description }}</h2>
+    <p><a href="/charities/{{ charity._id }}/edit">Edit</a></p>
+    <p>
+      <form method="POST" action="/charities/{{ charity._id }}/delete">
+        <button type="submit">Delete</button>
+      </form> 
+    </p>
+
+    <hr>
+
+    {% include 'partials/donation_form.html' %}
+
+    {% for donation in donations %}
+      {% include 'partials/donation.html' %}
+    {% endfor %}
+    
+  </div>
+</div>
+
+{% endblock %}
